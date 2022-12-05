@@ -1,0 +1,30 @@
+* {
+  padding : 0;
+  margin : 0;
+  box-sizing: border-box;
+}
+input {
+  margin: 5px 10px;
+} 
+
+#warning {
+  margin: 0 10px;
+  color: red;
+}
+table {
+  margin: 30px 10px;
+}
+table,td,th{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td,th{
+  padding: 5px;
+}
+.delete{
+  padding: 5px 10px;
+  border: 3px solid black;
+  color: white;
+  cursor: pointer;
+  background-color: tomato;
+}
