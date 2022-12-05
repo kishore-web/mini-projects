@@ -9,13 +9,19 @@ let allInputValues = []
 function addTodo(e){
   e.preventDefault();
   let todoValue = inputValue.value
+  
    if(allInputValues.includes(todoValue)){
     warning.innerText = "do not enter duplicate value"
     setTimeout(()=> {
       warning.innerText = ""
-    },1000)
-    } else {
-      
+    },1000) 
+  } else if(todoValue == ""){
+    warning.innerText = "Enter TODO List"
+    setTimeout(()=> {
+      warning.innerText = ""
+    },1000) 
+    }
+     else {
       output.innerHTML += `<tr><td>${todoValue}</td><td class="delete">Delete</td></tr>`
       allInputValues.push(todoValue)
       console.log("Todo Values in Array:", allInputValues)
