@@ -8,6 +8,14 @@ input {
   height: 2rem;
   font-size: 1rem;
 } 
+body {
+  display: flex;
+  align-items: center;
+}
+.container{
+  /* border: 1px solid red; */
+  margin: 0 auto; 
+}
 #add{
   background-color: tomato;
   color: white;
@@ -36,4 +44,7 @@ td,th{
   color: white;
   cursor: pointer;
   background-color: tomato;
+}
+.delete:hover{
+  opacity: 0.9;
 }
