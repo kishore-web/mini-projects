@@ -6,10 +6,16 @@ let warning = document.querySelector("#warning")
 // console.log(addBtn)
 let allInputValues = []
 
+function showingOutput(todoValue){
+  output.innerHTML += `<tr>
+                        <td>${todoValue}</td>
+                        <td class="delete">Delete</td>
+                      </tr>`
+}
+
 function addTodo(e){
-  e.preventDefault();
-  let todoValue = inputValue.value
   
+  let todoValue = inputValue.value
    if(allInputValues.includes(todoValue)){
     warning.innerText = "do not enter duplicate value"
     setTimeout(()=> {
@@ -22,9 +28,12 @@ function addTodo(e){
     },1000) 
     }
      else {
-      output.innerHTML += `<tr><td>${todoValue}</td><td class="delete">Delete</td></tr>`
+      showingOutput(todoValue)
+
       allInputValues.push(todoValue)
-      console.log("Todo Values in Array:", allInputValues)
+
+      localStorage.setItem("id", JSON.stringify(allInputValues))
+      // console.log("Todo Values in Array:", allInputValues)
     }
 }
 
@@ -33,14 +42,28 @@ function deletingTodo(e) {
      e.target.parentNode.remove();
 
     let removeEle = e.target.parentNode.firstElementChild.innerText
-    console.log(removeEle)
+    // console.log(removeEle)
     let index = allInputValues.indexOf(removeEle)
-      if(index !== -1){
-        allInputValues.splice(index, 1)
-      }
-       console.log("Updated Array after deleting:",allInputValues)
-    }
+
+        allInputValues.splice(index, 1);
+
+        localStorage.setItem("id", JSON.stringify(allInputValues))
+    //    console.log("Updated Array after deleting:",allInputValues)
+     }
+}
+function showDataLocalStorage(){
+  let localData = localStorage.getItem("id")
+  if(localData === null){
+    return;
+  }
+  let getItem = JSON.parse(localData)
+  console.log(getItem)
+  getItem.forEach((todoValue) => {
+    showingOutput(todoValue)
+  })
+
 }
 
+window.addEventListener("load", showDataLocalStorage)
 addBtn.addEventListener("click", addTodo)
 output.addEventListener("click", deletingTodo)
