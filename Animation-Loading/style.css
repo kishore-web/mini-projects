@@ -15,20 +15,34 @@ body{
   display: flex;
   color: white;
   align-items: center;
-  justify-content: space-between;
-  min-width: 200px;
+  justify-content: space-evenly; 
 }
 .circle{
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
-  animation-name: loading;
+  margin: 0 5px;
+  animation: loading 0.8s ease infinite;
+  
+}
+.container .one{
+  animation-delay: 0.3s;
+}
+.container .two{
+  animation-delay: 0.4s;
+}
+.container .three{
+  animation-delay: 0.5s;
 }
 
 @keyframes loading{
-  
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+  }
 }
