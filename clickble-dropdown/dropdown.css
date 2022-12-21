@@ -42,6 +42,7 @@
   margin: 1px;
   cursor: pointer;
   position: relative;
+  z-index: 2;
 }
 
 .adult-age li:hover{
