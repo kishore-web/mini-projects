@@ -8,6 +8,7 @@ const noOfTravellers = document.querySelector(".travel-number")
 const adults = document.querySelector(".adults")
 const children = document.querySelector(".children")
 const infants = document.querySelector(".infants")
+const infantsli = document.querySelectorAll(".infants>li")
 
 let adultNo = 0;
 let childrenNo = 0;
@@ -31,13 +32,25 @@ children.addEventListener("click", (e)=>{
 })
 infants.addEventListener("click", (e)=>{
   infantsNo = parseInt(e.target.innerHTML)
+  console.log(infantsli)
+  for(i = 0 ; i< infantsli.length;i++){
+    console.log(infantsli[i].classList.contains("selected"))
+  }
+//    if(infantsli.classList.contains("selected"))
+//   {
+//     infantsli.classList.remove("selected")
+//  } 
   e.target.classList.add("selected")
+ 
+  
+
+  
 })
 //submit the no of travellers details
 function submitTotalTravellers(e){
   e.preventDefault();
   sum = adultNo + childrenNo + infantsNo
-  console.log(sum)
+  // console.log(sum)
   noOfTravellers.innerText = sum
   classtype.innerText = travelType
   resetValues()
@@ -45,7 +58,6 @@ function submitTotalTravellers(e){
 
 function resetValues(e) {
   adultNo = 0
-  console.log(adultNo)
   childrenNo = 0
   infantsNo = 0
   sum = 0
