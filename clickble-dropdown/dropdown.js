@@ -32,19 +32,9 @@ children.addEventListener("click", (e)=>{
 })
 infants.addEventListener("click", (e)=>{
   infantsNo = parseInt(e.target.innerHTML)
-  console.log(infantsli)
-  for(i = 0 ; i< infantsli.length;i++){
-    console.log(infantsli[i].classList.contains("selected"))
-  }
-//    if(infantsli.classList.contains("selected"))
-//   {
-//     infantsli.classList.remove("selected")
-//  } 
+  
   e.target.classList.add("selected")
  
-  
-
-  
 })
 //submit the no of travellers details
 function submitTotalTravellers(e){
