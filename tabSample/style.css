@@ -17,6 +17,6 @@ li {
 li:hover {
   background-color: rgb(129, 129, 129);
 }
-li:active {
+ li.active {
   background-color: green;
 }

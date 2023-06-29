@@ -3,11 +3,13 @@ const description = document.querySelector("#description")
 city.addEventListener("click", (e)=> {
   // console.log(e.target)
   if(e.target.innerText == "London"){
-   
+   e.target.classList.add("active")
 description.innerHTML = ` <h2>London</h2>
 <p>London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.</p>`
   }
   else if(e.target.innerText == "Paris"){
+   e.target.classList.add("active")
+
   description.innerHTML = ` <h2>Paris</h2>
 <p>
 Image result for paris
